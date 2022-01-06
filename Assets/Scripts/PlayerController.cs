@@ -6,14 +6,19 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
+    public float forewardMoveSpeed = 0;
     public float speed = 0;
     public TextMeshProUGUI countText;
     public GameObject WinTextObject;
+    public GameObject Pickup;
 
     private Rigidbody rb;
+    private Transform tf;
     private int count;
     private float movementX;
     private float movementY;
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +26,7 @@ public class PlayerController : MonoBehaviour
         count = 0;
         SetCountText();
         rb = GetComponent<Rigidbody>();
+        tf = GetComponent<Transform>();
         WinTextObject.SetActive(false);
     }
 
@@ -28,7 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 movementVector = movementValue.Get<Vector2>();
 
-        movementX = movementVector.x;
+        movementX = movementVector.x * speed;
         movementY = movementVector.y;
     }
 
@@ -41,11 +47,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
     void FixedUpdate()
     { 
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+        Vector3 movement = new Vector3(movementX, 0.0f, forewardMoveSpeed);
 
-        rb.AddForce(movement * speed);
+        rb.AddForce(movement);
+
+        forewardMoveSpeed = (float)(forewardMoveSpeed * 0.99);
     }
 
     private void OnTriggerEnter(Collider other)
