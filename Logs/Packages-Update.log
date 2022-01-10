@@ -67,3 +67,20 @@ The following packages were updated:
   com.unity.collab-proxy from version 1.2.16 to 1.6.0
   com.unity.ide.visualstudio from version 2.0.8 to 2.0.9
   com.unity.test-framework from version 1.1.24 to 1.1.27
+
+=== Sun Jan  9 20:17:13 2022
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were added:
+  com.unity.2d.sprite@1.0.0
+  com.unity.2d.tilemap@1.0.0
+  com.unity.multiplayer-hlapi@1.0.8
+  com.unity.xr.legacyinputhelpers@2.1.8
+The following packages were updated:
+  com.unity.collab-proxy from version 1.6.0 to 1.14.4
+  com.unity.ide.visualstudio from version 2.0.9 to 2.0.12
+  com.unity.ide.vscode from version 1.2.3 to 1.2.4
+  com.unity.inputsystem from version 1.0.2 to 1.2.0
+  com.unity.test-framework from version 1.1.27 to 1.1.29
